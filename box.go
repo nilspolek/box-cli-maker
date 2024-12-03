@@ -355,6 +355,18 @@ func (b Box) Realign(title, lines string) {
 	fmt.Print("\033[H\033[2J")
 }
 
+// PrintAligned prints the Box after realigning it
+func (b Box) PrintAlingned(title, lines string) {
+	b.Realign(title, lines)
+	b.Print(title, lines)
+}
+
+// PrintlnAligned prints the Box after realigning it
+func (b Box) PrintlnAligned(title, lines string) {
+	b.Realign(title, lines)
+	b.Println(title, lines)
+}
+
 // Print prints the Box
 func (b Box) Print(title, lines string) {
 	var lines2 []string
