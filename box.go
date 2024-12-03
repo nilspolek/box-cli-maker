@@ -349,6 +349,12 @@ func (b Box) obtainBoxColor() string {
 	}
 }
 
+// Realigns the Box to the top of the terminal
+// to create the effect of updating the Box
+func (b Box) Realign(title, lines string) {
+	fmt.Print("\033[H\033[2J")
+}
+
 // Print prints the Box
 func (b Box) Print(title, lines string) {
 	var lines2 []string
